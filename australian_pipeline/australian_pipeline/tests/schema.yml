@@ -1,0 +1,13 @@
+version: 2
+models:
+  - name: fct_integrated_companies
+    columns:
+      - name: website_url
+        tests:
+          - not_null
+          - unique
+      - name: abn
+        tests:
+          - relationships:
+              to: ref('abr_companies')
+              field: abn

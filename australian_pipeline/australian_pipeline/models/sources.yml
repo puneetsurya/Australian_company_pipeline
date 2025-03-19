@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: company_data
+    schema: public
+    tables:
+      - name: common_crawl_websites
+      - name: abr_companies

@@ -1,0 +1,916 @@
+[0m13:21:21.403967 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025737EA37A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025737EA2C60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025737F0EE70>]}
+
+
+============================== 13:21:21.411020 | f55c9f20-abbe-4a70-843a-2234eaddf241 ==============================
+[0m13:21:21.411020 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:21:21.412008 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Acer\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\Acer\\australian_company_pipeline\\australian_pipeline\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m13:21:21.449215 [info ] [MainThread]: dbt version: 1.9.2
+[0m13:21:21.450216 [info ] [MainThread]: python version: 3.12.1
+[0m13:21:21.451215 [info ] [MainThread]: python path: C:\Python312\python.exe
+[0m13:21:21.452226 [info ] [MainThread]: os info: Windows-11-10.0.27783-SP0
+[0m13:21:21.622344 [info ] [MainThread]: Using profiles dir at C:\Users\Acer\.dbt
+[0m13:21:21.623346 [info ] [MainThread]: Using profiles.yml file at C:\Users\Acer\.dbt\profiles.yml
+[0m13:21:21.625354 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Acer\australian_company_pipeline\australian_pipeline\dbt_project.yml
+[0m13:21:21.628877 [info ] [MainThread]: adapter type: postgres
+[0m13:21:21.629878 [info ] [MainThread]: adapter version: 1.9.0
+[0m13:21:21.806551 [info ] [MainThread]: Configuration:
+[0m13:21:21.807553 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:21:21.808552 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:21:21.808552 [info ] [MainThread]: Required dependencies:
+[0m13:21:21.809552 [debug] [MainThread]: Executing "git --help"
+[0m13:21:21.860145 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:21:21.861146 [debug] [MainThread]: STDERR: "b''"
+[0m13:21:21.862147 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:21:21.863146 [info ] [MainThread]: Connection:
+[0m13:21:21.864141 [info ] [MainThread]:   host: localhost
+[0m13:21:21.866145 [info ] [MainThread]:   port: 5432
+[0m13:21:21.867144 [info ] [MainThread]:   user: postgres
+[0m13:21:21.868144 [info ] [MainThread]:   database: company_data
+[0m13:21:21.870145 [info ] [MainThread]:   schema: public
+[0m13:21:21.871144 [info ] [MainThread]:   connect_timeout: 10
+[0m13:21:21.873154 [info ] [MainThread]:   role: None
+[0m13:21:21.874141 [info ] [MainThread]:   search_path: None
+[0m13:21:21.876170 [info ] [MainThread]:   keepalives_idle: 0
+[0m13:21:21.877146 [info ] [MainThread]:   sslmode: None
+[0m13:21:21.878149 [info ] [MainThread]:   sslcert: None
+[0m13:21:21.879144 [info ] [MainThread]:   sslkey: None
+[0m13:21:21.880169 [info ] [MainThread]:   sslrootcert: None
+[0m13:21:21.881173 [info ] [MainThread]:   application_name: dbt
+[0m13:21:21.883145 [info ] [MainThread]:   retries: 1
+[0m13:21:21.885145 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:21:22.582283 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m13:21:22.790389 [debug] [MainThread]: Using postgres connection "debug"
+[0m13:21:22.791391 [debug] [MainThread]: On debug: select 1 as id
+[0m13:21:22.792391 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:21:22.988399 [debug] [MainThread]: SQL status: SELECT 1 in 0.195 seconds
+[0m13:21:22.990398 [debug] [MainThread]: On debug: Close
+[0m13:21:22.991405 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:21:22.992396 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:21:22.995391 [debug] [MainThread]: Command `dbt debug` succeeded at 13:21:22.994397 after 1.90 seconds
+[0m13:21:22.996390 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:21:22.996390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025738858F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025738859310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257385D6930>]}
+[0m13:21:22.997390 [debug] [MainThread]: Flushing usage events
+[0m13:21:24.278173 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:38:53.842942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB1575850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB14B93A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB14B8EC0>]}
+
+
+============================== 13:38:53.849712 | 484c5c12-5e94-4e26-9104-52d7f337330e ==============================
+[0m13:38:53.849712 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:38:53.850712 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\Acer\\australian_company_pipeline\\australian_pipeline\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Acer\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:38:54.336355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB114CE00>]}
+[0m13:38:54.435888 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB1D13B90>]}
+[0m13:38:54.437884 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:38:55.318305 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:38:55.321300 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:38:55.322301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB1EADDC0>]}
+[0m13:39:00.206849 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.australian_pipeline.relationships_fct_integrated_companies_abn__abn__ref_abr_companies_.15f610d2ab' (tests\schema.yml) depends on a node named 'abr_companies' in package '' which was not found
+[0m13:39:00.375936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB23022A0>]}
+[0m13:39:00.626056 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\manifest.json
+[0m13:39:00.632064 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\semantic_manifest.json
+[0m13:39:00.846277 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB24ED310>]}
+[0m13:39:00.847271 [info ] [MainThread]: Found 6 models, 7 data tests, 2 sources, 433 macros
+[0m13:39:00.848272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB24ABDA0>]}
+[0m13:39:00.853277 [info ] [MainThread]: 
+[0m13:39:00.855285 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:39:00.856289 [info ] [MainThread]: 
+[0m13:39:00.857317 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:39:00.865318 [debug] [ThreadPool]: Acquiring new postgres connection 'list_company_data'
+[0m13:39:01.030165 [debug] [ThreadPool]: Using postgres connection "list_company_data"
+[0m13:39:01.031165 [debug] [ThreadPool]: On list_company_data: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "connection_name": "list_company_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m13:39:01.032164 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:39:02.056532 [debug] [ThreadPool]: SQL status: SELECT 4 in 1.024 seconds
+[0m13:39:02.058560 [debug] [ThreadPool]: On list_company_data: Close
+[0m13:39:02.061533 [debug] [ThreadPool]: Acquiring new postgres connection 'list_company_data_public'
+[0m13:39:02.070563 [debug] [ThreadPool]: Using postgres connection "list_company_data_public"
+[0m13:39:02.071533 [debug] [ThreadPool]: On list_company_data_public: BEGIN
+[0m13:39:02.072563 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:39:02.149064 [debug] [ThreadPool]: SQL status: BEGIN in 0.076 seconds
+[0m13:39:02.150067 [debug] [ThreadPool]: Using postgres connection "list_company_data_public"
+[0m13:39:02.151078 [debug] [ThreadPool]: On list_company_data_public: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "connection_name": "list_company_data_public"} */
+select
+      'company_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'company_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'company_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:39:02.192583 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.040 seconds
+[0m13:39:02.193571 [debug] [ThreadPool]: On list_company_data_public: ROLLBACK
+[0m13:39:02.194586 [debug] [ThreadPool]: On list_company_data_public: Close
+[0m13:39:02.203091 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:02.204109 [debug] [MainThread]: On master: BEGIN
+[0m13:39:02.205112 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:39:02.282111 [debug] [MainThread]: SQL status: BEGIN in 0.078 seconds
+[0m13:39:02.284110 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:02.285147 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m13:39:02.323777 [debug] [MainThread]: SQL status: SELECT 0 in 0.038 seconds
+[0m13:39:02.325816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB24861E0>]}
+[0m13:39:02.326813 [debug] [MainThread]: On master: ROLLBACK
+[0m13:39:02.327812 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:02.328815 [debug] [MainThread]: On master: BEGIN
+[0m13:39:02.329827 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m13:39:02.330815 [debug] [MainThread]: On master: COMMIT
+[0m13:39:02.330815 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:02.331812 [debug] [MainThread]: On master: COMMIT
+[0m13:39:02.332782 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m13:39:02.332782 [debug] [MainThread]: On master: Close
+[0m13:39:02.336779 [debug] [Thread-1 (]: Began running node model.australian_pipeline.my_first_dbt_model
+[0m13:39:02.338780 [info ] [Thread-1 (]: 1 of 6 START sql table model public.my_first_dbt_model ......................... [RUN]
+[0m13:39:02.339779 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.australian_pipeline.my_first_dbt_model'
+[0m13:39:02.340782 [debug] [Thread-1 (]: Began compiling node model.australian_pipeline.my_first_dbt_model
+[0m13:39:02.352781 [debug] [Thread-1 (]: Writing injected SQL for node "model.australian_pipeline.my_first_dbt_model"
+[0m13:39:02.356779 [debug] [Thread-1 (]: Began executing node model.australian_pipeline.my_first_dbt_model
+[0m13:39:02.434403 [debug] [Thread-1 (]: Writing runtime sql for node "model.australian_pipeline.my_first_dbt_model"
+[0m13:39:02.438407 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_first_dbt_model"
+[0m13:39:02.439447 [debug] [Thread-1 (]: On model.australian_pipeline.my_first_dbt_model: BEGIN
+[0m13:39:02.440446 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m13:39:02.523031 [debug] [Thread-1 (]: SQL status: BEGIN in 0.083 seconds
+[0m13:39:02.524030 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_first_dbt_model"
+[0m13:39:02.525028 [debug] [Thread-1 (]: On model.australian_pipeline.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "model.australian_pipeline.my_first_dbt_model"} */
+
+  
+    
+
+  create  table "company_data"."public"."my_first_dbt_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+  
+[0m13:39:02.567044 [debug] [Thread-1 (]: SQL status: SELECT 2 in 0.041 seconds
+[0m13:39:02.577037 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_first_dbt_model"
+[0m13:39:02.578037 [debug] [Thread-1 (]: On model.australian_pipeline.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "model.australian_pipeline.my_first_dbt_model"} */
+alter table "company_data"."public"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+[0m13:39:02.581039 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m13:39:02.612583 [debug] [Thread-1 (]: On model.australian_pipeline.my_first_dbt_model: COMMIT
+[0m13:39:02.613582 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_first_dbt_model"
+[0m13:39:02.614587 [debug] [Thread-1 (]: On model.australian_pipeline.my_first_dbt_model: COMMIT
+[0m13:39:02.616593 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m13:39:02.627626 [debug] [Thread-1 (]: Applying DROP to: "company_data"."public"."my_first_dbt_model__dbt_backup"
+[0m13:39:02.637584 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_first_dbt_model"
+[0m13:39:02.638597 [debug] [Thread-1 (]: On model.australian_pipeline.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "model.australian_pipeline.my_first_dbt_model"} */
+drop table if exists "company_data"."public"."my_first_dbt_model__dbt_backup" cascade
+[0m13:39:02.641585 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.001 seconds
+[0m13:39:02.648583 [debug] [Thread-1 (]: On model.australian_pipeline.my_first_dbt_model: Close
+[0m13:39:02.653584 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB01D08C0>]}
+[0m13:39:02.655584 [info ] [Thread-1 (]: 1 of 6 OK created sql table model public.my_first_dbt_model .................... [[32mSELECT 2[0m in 0.31s]
+[0m13:39:02.657588 [debug] [Thread-1 (]: Finished running node model.australian_pipeline.my_first_dbt_model
+[0m13:39:02.658594 [debug] [Thread-1 (]: Began running node model.australian_pipeline.stg_abr
+[0m13:39:02.659584 [info ] [Thread-1 (]: 2 of 6 START sql view model public.stg_abr ..................................... [RUN]
+[0m13:39:02.660631 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.australian_pipeline.my_first_dbt_model, now model.australian_pipeline.stg_abr)
+[0m13:39:02.661629 [debug] [Thread-1 (]: Began compiling node model.australian_pipeline.stg_abr
+[0m13:39:02.666629 [debug] [Thread-1 (]: Writing injected SQL for node "model.australian_pipeline.stg_abr"
+[0m13:39:02.669587 [debug] [Thread-1 (]: Began executing node model.australian_pipeline.stg_abr
+[0m13:39:02.694676 [debug] [Thread-1 (]: Writing runtime sql for node "model.australian_pipeline.stg_abr"
+[0m13:39:02.696676 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.stg_abr"
+[0m13:39:02.697636 [debug] [Thread-1 (]: On model.australian_pipeline.stg_abr: BEGIN
+[0m13:39:02.697636 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:02.757262 [debug] [Thread-1 (]: SQL status: BEGIN in 0.059 seconds
+[0m13:39:02.758262 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.stg_abr"
+[0m13:39:02.758262 [debug] [Thread-1 (]: On model.australian_pipeline.stg_abr: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "model.australian_pipeline.stg_abr"} */
+
+  create view "company_data"."public"."stg_abr__dbt_tmp"
+    
+    
+  as (
+    
+SELECT abn, entity_type, legal_name, company_name, trading_name, state, postcode FROM "company_data"."public"."abr_companies";
+  );
+[0m13:39:02.761235 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 8: ...tate, postcode FROM "company_data"."public"."abr_companies";
+                                                                      ^
+
+[0m13:39:02.762263 [debug] [Thread-1 (]: On model.australian_pipeline.stg_abr: ROLLBACK
+[0m13:39:02.763233 [debug] [Thread-1 (]: On model.australian_pipeline.stg_abr: Close
+[0m13:39:02.909260 [debug] [Thread-1 (]: Database Error in model stg_abr (models\stg_abr.sql)
+  syntax error at or near ";"
+  LINE 8: ...tate, postcode FROM "company_data"."public"."abr_companies";
+                                                                        ^
+  compiled code at target\run\australian_pipeline\models\stg_abr.sql
+[0m13:39:02.910262 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB26ECB60>]}
+[0m13:39:02.911262 [error] [Thread-1 (]: 2 of 6 ERROR creating sql view model public.stg_abr ............................ [[31mERROR[0m in 0.25s]
+[0m13:39:02.913261 [debug] [Thread-1 (]: Finished running node model.australian_pipeline.stg_abr
+[0m13:39:02.913261 [debug] [Thread-1 (]: Began running node model.australian_pipeline.stg_common_crawl
+[0m13:39:02.914261 [debug] [Thread-4 (]: Marking all children of 'model.australian_pipeline.stg_abr' to be skipped because of status 'error'.  Reason: Database Error in model stg_abr (models\stg_abr.sql)
+  syntax error at or near ";"
+  LINE 8: ...tate, postcode FROM "company_data"."public"."abr_companies";
+                                                                        ^
+  compiled code at target\run\australian_pipeline\models\stg_abr.sql.
+[0m13:39:02.915261 [info ] [Thread-1 (]: 3 of 6 START sql view model public.stg_common_crawl ............................ [RUN]
+[0m13:39:02.918217 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.australian_pipeline.stg_abr, now model.australian_pipeline.stg_common_crawl)
+[0m13:39:02.919218 [debug] [Thread-1 (]: Began compiling node model.australian_pipeline.stg_common_crawl
+[0m13:39:02.925497 [debug] [Thread-1 (]: Writing injected SQL for node "model.australian_pipeline.stg_common_crawl"
+[0m13:39:02.926517 [debug] [Thread-1 (]: Began executing node model.australian_pipeline.stg_common_crawl
+[0m13:39:02.931944 [debug] [Thread-1 (]: Writing runtime sql for node "model.australian_pipeline.stg_common_crawl"
+[0m13:39:02.934464 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.stg_common_crawl"
+[0m13:39:02.935487 [debug] [Thread-1 (]: On model.australian_pipeline.stg_common_crawl: BEGIN
+[0m13:39:02.935487 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:03.008763 [debug] [Thread-1 (]: SQL status: BEGIN in 0.072 seconds
+[0m13:39:03.009805 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.stg_common_crawl"
+[0m13:39:03.010816 [debug] [Thread-1 (]: On model.australian_pipeline.stg_common_crawl: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "model.australian_pipeline.stg_common_crawl"} */
+
+  create view "company_data"."public"."stg_common_crawl__dbt_tmp"
+    
+    
+  as (
+    
+SELECT website_url, company_name, crawl_date FROM "company_data"."public"."common_crawl_websites";
+  );
+[0m13:39:03.011763 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 8: ...l_date FROM "company_data"."public"."common_crawl_websites";
+                                                                      ^
+
+[0m13:39:03.012766 [debug] [Thread-1 (]: On model.australian_pipeline.stg_common_crawl: ROLLBACK
+[0m13:39:03.013762 [debug] [Thread-1 (]: On model.australian_pipeline.stg_common_crawl: Close
+[0m13:39:03.018773 [debug] [Thread-1 (]: Database Error in model stg_common_crawl (models\stg_common_crawl.sql)
+  syntax error at or near ";"
+  LINE 8: ...l_date FROM "company_data"."public"."common_crawl_websites";
+                                                                        ^
+  compiled code at target\run\australian_pipeline\models\stg_common_crawl.sql
+[0m13:39:03.019773 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB2826810>]}
+[0m13:39:03.020771 [error] [Thread-1 (]: 3 of 6 ERROR creating sql view model public.stg_common_crawl ................... [[31mERROR[0m in 0.10s]
+[0m13:39:03.021771 [debug] [Thread-1 (]: Finished running node model.australian_pipeline.stg_common_crawl
+[0m13:39:03.022768 [debug] [Thread-1 (]: Began running node model.australian_pipeline.my_second_dbt_model
+[0m13:39:03.023806 [debug] [Thread-4 (]: Marking all children of 'model.australian_pipeline.stg_common_crawl' to be skipped because of status 'error'.  Reason: Database Error in model stg_common_crawl (models\stg_common_crawl.sql)
+  syntax error at or near ";"
+  LINE 8: ...l_date FROM "company_data"."public"."common_crawl_websites";
+                                                                        ^
+  compiled code at target\run\australian_pipeline\models\stg_common_crawl.sql.
+[0m13:39:03.024806 [info ] [Thread-1 (]: 4 of 6 START sql view model public.my_second_dbt_model ......................... [RUN]
+[0m13:39:03.026259 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.australian_pipeline.stg_common_crawl, now model.australian_pipeline.my_second_dbt_model)
+[0m13:39:03.027267 [debug] [Thread-1 (]: Began compiling node model.australian_pipeline.my_second_dbt_model
+[0m13:39:03.030266 [debug] [Thread-1 (]: Writing injected SQL for node "model.australian_pipeline.my_second_dbt_model"
+[0m13:39:03.032266 [debug] [Thread-1 (]: Began executing node model.australian_pipeline.my_second_dbt_model
+[0m13:39:03.039266 [debug] [Thread-1 (]: Writing runtime sql for node "model.australian_pipeline.my_second_dbt_model"
+[0m13:39:03.041267 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_second_dbt_model"
+[0m13:39:03.041267 [debug] [Thread-1 (]: On model.australian_pipeline.my_second_dbt_model: BEGIN
+[0m13:39:03.042267 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:03.110333 [debug] [Thread-1 (]: SQL status: BEGIN in 0.068 seconds
+[0m13:39:03.111381 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_second_dbt_model"
+[0m13:39:03.112381 [debug] [Thread-1 (]: On model.australian_pipeline.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "model.australian_pipeline.my_second_dbt_model"} */
+
+  create view "company_data"."public"."my_second_dbt_model__dbt_tmp"
+    
+    
+  as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "company_data"."public"."my_first_dbt_model"
+where id = 1
+  );
+[0m13:39:03.135753 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.023 seconds
+[0m13:39:03.139766 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_second_dbt_model"
+[0m13:39:03.140802 [debug] [Thread-1 (]: On model.australian_pipeline.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "model.australian_pipeline.my_second_dbt_model"} */
+alter table "company_data"."public"."my_second_dbt_model__dbt_tmp" rename to "my_second_dbt_model"
+[0m13:39:03.141800 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m13:39:03.143800 [debug] [Thread-1 (]: On model.australian_pipeline.my_second_dbt_model: COMMIT
+[0m13:39:03.143800 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_second_dbt_model"
+[0m13:39:03.144799 [debug] [Thread-1 (]: On model.australian_pipeline.my_second_dbt_model: COMMIT
+[0m13:39:03.146799 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m13:39:03.149760 [debug] [Thread-1 (]: Applying DROP to: "company_data"."public"."my_second_dbt_model__dbt_backup"
+[0m13:39:03.153801 [debug] [Thread-1 (]: Using postgres connection "model.australian_pipeline.my_second_dbt_model"
+[0m13:39:03.153801 [debug] [Thread-1 (]: On model.australian_pipeline.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "model.australian_pipeline.my_second_dbt_model"} */
+drop view if exists "company_data"."public"."my_second_dbt_model__dbt_backup" cascade
+[0m13:39:03.154768 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m13:39:03.156802 [debug] [Thread-1 (]: On model.australian_pipeline.my_second_dbt_model: Close
+[0m13:39:03.157807 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '484c5c12-5e94-4e26-9104-52d7f337330e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB2827740>]}
+[0m13:39:03.158791 [info ] [Thread-1 (]: 4 of 6 OK created sql view model public.my_second_dbt_model .................... [[32mCREATE VIEW[0m in 0.13s]
+[0m13:39:03.159766 [debug] [Thread-1 (]: Finished running node model.australian_pipeline.my_second_dbt_model
+[0m13:39:03.160758 [debug] [Thread-1 (]: Began running node model.australian_pipeline.int_matched_companies
+[0m13:39:03.161774 [info ] [Thread-1 (]: 5 of 6 SKIP relation public.int_matched_companies .............................. [[33mSKIP[0m]
+[0m13:39:03.162802 [debug] [Thread-1 (]: Finished running node model.australian_pipeline.int_matched_companies
+[0m13:39:03.163804 [debug] [Thread-1 (]: Began running node model.australian_pipeline.fct_integrated_companies
+[0m13:39:03.164802 [info ] [Thread-1 (]: 6 of 6 SKIP relation public.fct_integrated_companies ........................... [[33mSKIP[0m]
+[0m13:39:03.166767 [debug] [Thread-1 (]: Finished running node model.australian_pipeline.fct_integrated_companies
+[0m13:39:03.168804 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:03.169803 [debug] [MainThread]: On master: BEGIN
+[0m13:39:03.170771 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:39:03.233875 [debug] [MainThread]: SQL status: BEGIN in 0.063 seconds
+[0m13:39:03.234874 [debug] [MainThread]: On master: COMMIT
+[0m13:39:03.235874 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:03.236911 [debug] [MainThread]: On master: COMMIT
+[0m13:39:03.237918 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m13:39:03.237918 [debug] [MainThread]: On master: Close
+[0m13:39:03.238911 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:39:03.239877 [debug] [MainThread]: Connection 'list_company_data' was properly closed.
+[0m13:39:03.240875 [debug] [MainThread]: Connection 'list_company_data_public' was properly closed.
+[0m13:39:03.240875 [debug] [MainThread]: Connection 'model.australian_pipeline.my_second_dbt_model' was properly closed.
+[0m13:39:03.241892 [info ] [MainThread]: 
+[0m13:39:03.242874 [info ] [MainThread]: Finished running 2 table models, 4 view models in 0 hours 0 minutes and 2.38 seconds (2.38s).
+[0m13:39:03.244910 [debug] [MainThread]: Command end result
+[0m13:39:03.276878 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\manifest.json
+[0m13:39:03.279911 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\semantic_manifest.json
+[0m13:39:03.294923 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\run_results.json
+[0m13:39:03.295922 [info ] [MainThread]: 
+[0m13:39:03.297918 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m13:39:03.298922 [info ] [MainThread]: 
+[0m13:39:03.301546 [error] [MainThread]:   Database Error in model stg_abr (models\stg_abr.sql)
+  syntax error at or near ";"
+  LINE 8: ...tate, postcode FROM "company_data"."public"."abr_companies";
+                                                                        ^
+  compiled code at target\run\australian_pipeline\models\stg_abr.sql
+[0m13:39:03.303451 [info ] [MainThread]: 
+[0m13:39:03.303968 [error] [MainThread]:   Database Error in model stg_common_crawl (models\stg_common_crawl.sql)
+  syntax error at or near ";"
+  LINE 8: ...l_date FROM "company_data"."public"."common_crawl_websites";
+                                                                        ^
+  compiled code at target\run\australian_pipeline\models\stg_common_crawl.sql
+[0m13:39:03.305022 [info ] [MainThread]: 
+[0m13:39:03.306114 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=2 SKIP=2 TOTAL=6
+[0m13:39:03.307719 [debug] [MainThread]: Command `dbt run` failed at 13:39:03.307167 after 9.71 seconds
+[0m13:39:03.308266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB022E120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AB211D1C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AAFFD4D10>]}
+[0m13:39:03.309316 [debug] [MainThread]: Flushing usage events
+[0m13:39:04.623796 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:39:47.773899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002630548C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026306D88380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026305568290>]}
+
+
+============================== 13:39:47.779791 | 58605620-41d7-43f3-9735-325a7c55ae26 ==============================
+[0m13:39:47.779791 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:39:47.780824 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Acer\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\Acer\\australian_company_pipeline\\australian_pipeline\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:39:48.084828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '58605620-41d7-43f3-9735-325a7c55ae26', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026307023B30>]}
+[0m13:39:48.181517 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '58605620-41d7-43f3-9735-325a7c55ae26', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002630689ADE0>]}
+[0m13:39:48.183259 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m13:39:48.595585 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:39:48.859442 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:39:48.860444 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:39:48.936957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '58605620-41d7-43f3-9735-325a7c55ae26', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000263072A1880>]}
+[0m13:39:49.077127 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\manifest.json
+[0m13:39:49.082134 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\semantic_manifest.json
+[0m13:39:49.177415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '58605620-41d7-43f3-9735-325a7c55ae26', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000263077CE3F0>]}
+[0m13:39:49.178416 [info ] [MainThread]: Found 6 models, 7 data tests, 2 sources, 433 macros
+[0m13:39:49.179425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '58605620-41d7-43f3-9735-325a7c55ae26', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002630778C2C0>]}
+[0m13:39:49.182416 [info ] [MainThread]: 
+[0m13:39:49.183415 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:39:49.183415 [info ] [MainThread]: 
+[0m13:39:49.185416 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:39:49.192417 [debug] [ThreadPool]: Acquiring new postgres connection 'list_company_data_public'
+[0m13:39:49.341078 [debug] [ThreadPool]: Using postgres connection "list_company_data_public"
+[0m13:39:49.342077 [debug] [ThreadPool]: On list_company_data_public: BEGIN
+[0m13:39:49.342077 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:39:49.418914 [debug] [ThreadPool]: SQL status: BEGIN in 0.077 seconds
+[0m13:39:49.419956 [debug] [ThreadPool]: Using postgres connection "list_company_data_public"
+[0m13:39:49.419956 [debug] [ThreadPool]: On list_company_data_public: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "connection_name": "list_company_data_public"} */
+select
+      'company_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'company_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'company_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:39:49.430915 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.010 seconds
+[0m13:39:49.432958 [debug] [ThreadPool]: On list_company_data_public: ROLLBACK
+[0m13:39:49.433920 [debug] [ThreadPool]: On list_company_data_public: Close
+[0m13:39:49.440916 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:49.440916 [debug] [MainThread]: On master: BEGIN
+[0m13:39:49.441916 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:39:49.508532 [debug] [MainThread]: SQL status: BEGIN in 0.067 seconds
+[0m13:39:49.509542 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:49.511535 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m13:39:49.526531 [debug] [MainThread]: SQL status: SELECT 1 in 0.014 seconds
+[0m13:39:49.529535 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '58605620-41d7-43f3-9735-325a7c55ae26', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002630560A450>]}
+[0m13:39:49.530536 [debug] [MainThread]: On master: ROLLBACK
+[0m13:39:49.531537 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:49.531537 [debug] [MainThread]: On master: BEGIN
+[0m13:39:49.532575 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m13:39:49.533575 [debug] [MainThread]: On master: COMMIT
+[0m13:39:49.534575 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:49.534575 [debug] [MainThread]: On master: COMMIT
+[0m13:39:49.535536 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m13:39:49.536536 [debug] [MainThread]: On master: Close
+[0m13:39:49.540534 [debug] [Thread-1 (]: Began running node test.australian_pipeline.data_quality
+[0m13:39:49.540534 [info ] [Thread-1 (]: 1 of 7 START test data_quality ................................................. [RUN]
+[0m13:39:49.542532 [debug] [Thread-1 (]: Acquiring new postgres connection 'test.australian_pipeline.data_quality'
+[0m13:39:49.543542 [debug] [Thread-1 (]: Began compiling node test.australian_pipeline.data_quality
+[0m13:39:49.556627 [debug] [Thread-1 (]: Writing injected SQL for node "test.australian_pipeline.data_quality"
+[0m13:39:49.558589 [debug] [Thread-1 (]: Began executing node test.australian_pipeline.data_quality
+[0m13:39:49.585192 [debug] [Thread-1 (]: Writing runtime sql for node "test.australian_pipeline.data_quality"
+[0m13:39:49.588152 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.data_quality"
+[0m13:39:49.589147 [debug] [Thread-1 (]: On test.australian_pipeline.data_quality: BEGIN
+[0m13:39:49.589147 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m13:39:49.669204 [debug] [Thread-1 (]: SQL status: BEGIN in 0.080 seconds
+[0m13:39:49.670583 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.data_quality"
+[0m13:39:49.671584 [debug] [Thread-1 (]: On test.australian_pipeline.data_quality: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "test.australian_pipeline.data_quality"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      select * from "company_data"."public"."fct_integrated_companies" where abn is null and common_crawl_company_name != 'Company Name Not Found'
+      
+    ) dbt_internal_test
+[0m13:39:49.682545 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "public.fct_integrated_companies" does not exist
+LINE 7:       select * from "company_data"."public"."fct_integrated_...
+                            ^
+
+[0m13:39:49.683580 [debug] [Thread-1 (]: On test.australian_pipeline.data_quality: ROLLBACK
+[0m13:39:49.684581 [debug] [Thread-1 (]: On test.australian_pipeline.data_quality: Close
+[0m13:39:49.711546 [debug] [Thread-1 (]: Database Error in test data_quality (tests\data_quality.sql)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 7:       select * from "company_data"."public"."fct_integrated_...
+                              ^
+  compiled code at target\run\australian_pipeline\tests\data_quality.sql
+[0m13:39:49.712550 [error] [Thread-1 (]: 1 of 7 ERROR data_quality ...................................................... [[31mERROR[0m in 0.17s]
+[0m13:39:49.714583 [debug] [Thread-1 (]: Finished running node test.australian_pipeline.data_quality
+[0m13:39:49.715588 [debug] [Thread-1 (]: Began running node test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862
+[0m13:39:49.716582 [debug] [Thread-4 (]: Marking all children of 'test.australian_pipeline.data_quality' to be skipped because of status 'error'.  Reason: Database Error in test data_quality (tests\data_quality.sql)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 7:       select * from "company_data"."public"."fct_integrated_...
+                              ^
+  compiled code at target\run\australian_pipeline\tests\data_quality.sql.
+[0m13:39:49.717582 [info ] [Thread-1 (]: 2 of 7 START test not_null_fct_integrated_companies_website_url ................ [RUN]
+[0m13:39:49.719582 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.australian_pipeline.data_quality, now test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862)
+[0m13:39:49.720597 [debug] [Thread-1 (]: Began compiling node test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862
+[0m13:39:49.739581 [debug] [Thread-1 (]: Writing injected SQL for node "test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862"
+[0m13:39:49.742540 [debug] [Thread-1 (]: Began executing node test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862
+[0m13:39:49.746583 [debug] [Thread-1 (]: Writing runtime sql for node "test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862"
+[0m13:39:49.749541 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862"
+[0m13:39:49.750584 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862: BEGIN
+[0m13:39:49.750584 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:49.830065 [debug] [Thread-1 (]: SQL status: BEGIN in 0.079 seconds
+[0m13:39:49.831111 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862"
+[0m13:39:49.831111 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select website_url
+from "company_data"."public"."fct_integrated_companies"
+where website_url is null
+
+
+
+      
+    ) dbt_internal_test
+[0m13:39:49.833064 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "public.fct_integrated_companies" does not exist
+LINE 14: from "company_data"."public"."fct_integrated_companies"
+              ^
+
+[0m13:39:49.834108 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862: ROLLBACK
+[0m13:39:49.835065 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862: Close
+[0m13:39:49.839065 [debug] [Thread-1 (]: Database Error in test not_null_fct_integrated_companies_website_url (tests\schema.yml)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 14: from "company_data"."public"."fct_integrated_companies"
+                ^
+  compiled code at target\run\australian_pipeline\tests\schema.yml\not_null_fct_integrated_companies_website_url.sql
+[0m13:39:49.840064 [error] [Thread-1 (]: 2 of 7 ERROR not_null_fct_integrated_companies_website_url ..................... [[31mERROR[0m in 0.12s]
+[0m13:39:49.842065 [debug] [Thread-1 (]: Finished running node test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862
+[0m13:39:49.843069 [debug] [Thread-1 (]: Began running node test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710
+[0m13:39:49.844067 [debug] [Thread-4 (]: Marking all children of 'test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862' to be skipped because of status 'error'.  Reason: Database Error in test not_null_fct_integrated_companies_website_url (tests\schema.yml)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 14: from "company_data"."public"."fct_integrated_companies"
+                ^
+  compiled code at target\run\australian_pipeline\tests\schema.yml\not_null_fct_integrated_companies_website_url.sql.
+[0m13:39:49.844780 [info ] [Thread-1 (]: 3 of 7 START test not_null_my_first_dbt_model_id ............................... [RUN]
+[0m13:39:49.846794 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.australian_pipeline.not_null_fct_integrated_companies_website_url.26094c4862, now test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710)
+[0m13:39:49.847349 [debug] [Thread-1 (]: Began compiling node test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710
+[0m13:39:49.854261 [debug] [Thread-1 (]: Writing injected SQL for node "test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m13:39:49.856615 [debug] [Thread-1 (]: Began executing node test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710
+[0m13:39:49.861951 [debug] [Thread-1 (]: Writing runtime sql for node "test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m13:39:49.863986 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m13:39:49.865337 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710: BEGIN
+[0m13:39:49.866396 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:49.935611 [debug] [Thread-1 (]: SQL status: BEGIN in 0.069 seconds
+[0m13:39:49.936608 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m13:39:49.936608 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select id
+from "company_data"."public"."my_first_dbt_model"
+where id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m13:39:49.955322 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.017 seconds
+[0m13:39:49.964357 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710: ROLLBACK
+[0m13:39:49.966309 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710: Close
+[0m13:39:49.967305 [error] [Thread-1 (]: 3 of 7 FAIL 1 not_null_my_first_dbt_model_id ................................... [[31mFAIL 1[0m in 0.12s]
+[0m13:39:49.969304 [debug] [Thread-1 (]: Finished running node test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710
+[0m13:39:49.969811 [debug] [Thread-1 (]: Began running node test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778
+[0m13:39:49.970819 [info ] [Thread-1 (]: 4 of 7 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[0m13:39:49.971818 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.australian_pipeline.not_null_my_first_dbt_model_id.5fb22c2710, now test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778)
+[0m13:39:49.972818 [debug] [Thread-1 (]: Began compiling node test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778
+[0m13:39:49.978831 [debug] [Thread-1 (]: Writing injected SQL for node "test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778"
+[0m13:39:49.980821 [debug] [Thread-1 (]: Began executing node test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778
+[0m13:39:49.982858 [debug] [Thread-1 (]: Writing runtime sql for node "test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778"
+[0m13:39:49.984821 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778"
+[0m13:39:49.984821 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778: BEGIN
+[0m13:39:49.985857 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:50.049156 [debug] [Thread-1 (]: SQL status: BEGIN in 0.063 seconds
+[0m13:39:50.050199 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778"
+[0m13:39:50.050199 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select id
+from "company_data"."public"."my_second_dbt_model"
+where id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m13:39:50.054158 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m13:39:50.057212 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778: ROLLBACK
+[0m13:39:50.059171 [debug] [Thread-1 (]: On test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778: Close
+[0m13:39:50.060166 [info ] [Thread-1 (]: 4 of 7 PASS not_null_my_second_dbt_model_id .................................... [[32mPASS[0m in 0.09s]
+[0m13:39:50.062172 [debug] [Thread-1 (]: Finished running node test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778
+[0m13:39:50.063169 [debug] [Thread-1 (]: Began running node test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e
+[0m13:39:50.064771 [info ] [Thread-1 (]: 5 of 7 START test unique_fct_integrated_companies_website_url .................. [RUN]
+[0m13:39:50.065777 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.australian_pipeline.not_null_my_second_dbt_model_id.151b76d778, now test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e)
+[0m13:39:50.066783 [debug] [Thread-1 (]: Began compiling node test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e
+[0m13:39:50.079916 [debug] [Thread-1 (]: Writing injected SQL for node "test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e"
+[0m13:39:50.082045 [debug] [Thread-1 (]: Began executing node test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e
+[0m13:39:50.086943 [debug] [Thread-1 (]: Writing runtime sql for node "test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e"
+[0m13:39:50.088511 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e"
+[0m13:39:50.089821 [debug] [Thread-1 (]: On test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e: BEGIN
+[0m13:39:50.090878 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:50.258403 [debug] [Thread-1 (]: SQL status: BEGIN in 0.167 seconds
+[0m13:39:50.258403 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e"
+[0m13:39:50.259367 [debug] [Thread-1 (]: On test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    website_url as unique_field,
+    count(*) as n_records
+
+from "company_data"."public"."fct_integrated_companies"
+where website_url is not null
+group by website_url
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m13:39:50.261365 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "public.fct_integrated_companies" does not exist
+LINE 15: from "company_data"."public"."fct_integrated_companies"
+              ^
+
+[0m13:39:50.261365 [debug] [Thread-1 (]: On test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e: ROLLBACK
+[0m13:39:50.262372 [debug] [Thread-1 (]: On test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e: Close
+[0m13:39:50.265371 [debug] [Thread-1 (]: Database Error in test unique_fct_integrated_companies_website_url (tests\schema.yml)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 15: from "company_data"."public"."fct_integrated_companies"
+                ^
+  compiled code at target\run\australian_pipeline\tests\schema.yml\unique_fct_integrated_companies_website_url.sql
+[0m13:39:50.266403 [error] [Thread-1 (]: 5 of 7 ERROR unique_fct_integrated_companies_website_url ....................... [[31mERROR[0m in 0.20s]
+[0m13:39:50.267404 [debug] [Thread-1 (]: Finished running node test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e
+[0m13:39:50.267404 [debug] [Thread-1 (]: Began running node test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321
+[0m13:39:50.268382 [debug] [Thread-4 (]: Marking all children of 'test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e' to be skipped because of status 'error'.  Reason: Database Error in test unique_fct_integrated_companies_website_url (tests\schema.yml)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 15: from "company_data"."public"."fct_integrated_companies"
+                ^
+  compiled code at target\run\australian_pipeline\tests\schema.yml\unique_fct_integrated_companies_website_url.sql.
+[0m13:39:50.268382 [info ] [Thread-1 (]: 6 of 7 START test unique_my_first_dbt_model_id ................................. [RUN]
+[0m13:39:50.269886 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.australian_pipeline.unique_fct_integrated_companies_website_url.dcc985ed6e, now test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321)
+[0m13:39:50.270936 [debug] [Thread-1 (]: Began compiling node test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321
+[0m13:39:50.274934 [debug] [Thread-1 (]: Writing injected SQL for node "test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321"
+[0m13:39:50.276914 [debug] [Thread-1 (]: Began executing node test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321
+[0m13:39:50.281936 [debug] [Thread-1 (]: Writing runtime sql for node "test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321"
+[0m13:39:50.284206 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321"
+[0m13:39:50.285271 [debug] [Thread-1 (]: On test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321: BEGIN
+[0m13:39:50.286257 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:50.349226 [debug] [Thread-1 (]: SQL status: BEGIN in 0.064 seconds
+[0m13:39:50.350258 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321"
+[0m13:39:50.351257 [debug] [Thread-1 (]: On test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "company_data"."public"."my_first_dbt_model"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m13:39:50.355270 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m13:39:50.357281 [debug] [Thread-1 (]: On test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321: ROLLBACK
+[0m13:39:50.358280 [debug] [Thread-1 (]: On test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321: Close
+[0m13:39:50.360233 [info ] [Thread-1 (]: 6 of 7 PASS unique_my_first_dbt_model_id ....................................... [[32mPASS[0m in 0.09s]
+[0m13:39:50.361224 [debug] [Thread-1 (]: Finished running node test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321
+[0m13:39:50.362270 [debug] [Thread-1 (]: Began running node test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493
+[0m13:39:50.363274 [info ] [Thread-1 (]: 7 of 7 START test unique_my_second_dbt_model_id ................................ [RUN]
+[0m13:39:50.364268 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.australian_pipeline.unique_my_first_dbt_model_id.16e066b321, now test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493)
+[0m13:39:50.365270 [debug] [Thread-1 (]: Began compiling node test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493
+[0m13:39:50.372783 [debug] [Thread-1 (]: Writing injected SQL for node "test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493"
+[0m13:39:50.374806 [debug] [Thread-1 (]: Began executing node test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493
+[0m13:39:50.378737 [debug] [Thread-1 (]: Writing runtime sql for node "test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493"
+[0m13:39:50.381784 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493"
+[0m13:39:50.381784 [debug] [Thread-1 (]: On test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493: BEGIN
+[0m13:39:50.383751 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:39:50.444739 [debug] [Thread-1 (]: SQL status: BEGIN in 0.062 seconds
+[0m13:39:50.445783 [debug] [Thread-1 (]: Using postgres connection "test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493"
+[0m13:39:50.446744 [debug] [Thread-1 (]: On test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "australian_pipeline", "target_name": "dev", "node_id": "test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "company_data"."public"."my_second_dbt_model"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m13:39:50.450778 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m13:39:50.452780 [debug] [Thread-1 (]: On test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493: ROLLBACK
+[0m13:39:50.453741 [debug] [Thread-1 (]: On test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493: Close
+[0m13:39:50.454781 [info ] [Thread-1 (]: 7 of 7 PASS unique_my_second_dbt_model_id ...................................... [[32mPASS[0m in 0.09s]
+[0m13:39:50.455796 [debug] [Thread-1 (]: Finished running node test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493
+[0m13:39:50.458792 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:50.459788 [debug] [MainThread]: On master: BEGIN
+[0m13:39:50.460794 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:39:50.529407 [debug] [MainThread]: SQL status: BEGIN in 0.068 seconds
+[0m13:39:50.530434 [debug] [MainThread]: On master: COMMIT
+[0m13:39:50.530434 [debug] [MainThread]: Using postgres connection "master"
+[0m13:39:50.531435 [debug] [MainThread]: On master: COMMIT
+[0m13:39:50.532452 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m13:39:50.533444 [debug] [MainThread]: On master: Close
+[0m13:39:50.533444 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:39:50.534433 [debug] [MainThread]: Connection 'list_company_data_public' was properly closed.
+[0m13:39:50.535434 [debug] [MainThread]: Connection 'test.australian_pipeline.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m13:39:50.535434 [info ] [MainThread]: 
+[0m13:39:50.536433 [info ] [MainThread]: Finished running 7 data tests in 0 hours 0 minutes and 1.35 seconds (1.35s).
+[0m13:39:50.539395 [debug] [MainThread]: Command end result
+[0m13:39:50.569481 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\manifest.json
+[0m13:39:50.572077 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\semantic_manifest.json
+[0m13:39:50.580077 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Acer\australian_company_pipeline\australian_pipeline\target\run_results.json
+[0m13:39:50.581073 [info ] [MainThread]: 
+[0m13:39:50.581073 [info ] [MainThread]: [31mCompleted with 4 errors, 0 partial successes, and 0 warnings:[0m
+[0m13:39:50.582037 [info ] [MainThread]: 
+[0m13:39:50.583065 [error] [MainThread]:   Database Error in test data_quality (tests\data_quality.sql)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 7:       select * from "company_data"."public"."fct_integrated_...
+                              ^
+  compiled code at target\run\australian_pipeline\tests\data_quality.sql
+[0m13:39:50.584035 [info ] [MainThread]: 
+[0m13:39:50.584035 [error] [MainThread]:   Database Error in test not_null_fct_integrated_companies_website_url (tests\schema.yml)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 14: from "company_data"."public"."fct_integrated_companies"
+                ^
+  compiled code at target\run\australian_pipeline\tests\schema.yml\not_null_fct_integrated_companies_website_url.sql
+[0m13:39:50.585072 [info ] [MainThread]: 
+[0m13:39:50.586036 [error] [MainThread]: [31mFailure in test not_null_my_first_dbt_model_id (models\example\schema.yml)[0m
+[0m13:39:50.587071 [error] [MainThread]:   Got 1 result, configured to fail if != 0
+[0m13:39:50.587071 [info ] [MainThread]: 
+[0m13:39:50.588034 [info ] [MainThread]:   compiled code at target\compiled\australian_pipeline\models\example\schema.yml\not_null_my_first_dbt_model_id.sql
+[0m13:39:50.589035 [info ] [MainThread]: 
+[0m13:39:50.590036 [error] [MainThread]:   Database Error in test unique_fct_integrated_companies_website_url (tests\schema.yml)
+  relation "public.fct_integrated_companies" does not exist
+  LINE 15: from "company_data"."public"."fct_integrated_companies"
+                ^
+  compiled code at target\run\australian_pipeline\tests\schema.yml\unique_fct_integrated_companies_website_url.sql
+[0m13:39:50.590036 [info ] [MainThread]: 
+[0m13:39:50.591073 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=4 SKIP=0 TOTAL=7
+[0m13:39:50.593035 [debug] [MainThread]: Command `dbt test` failed at 13:39:50.593035 after 3.05 seconds
+[0m13:39:50.594034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002630548C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026307E0D310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026305395A60>]}
+[0m13:39:50.594034 [debug] [MainThread]: Flushing usage events
+[0m13:39:51.828600 [debug] [MainThread]: An error was encountered while trying to flush usage events

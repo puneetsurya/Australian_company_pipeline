@@ -1,0 +1,2 @@
+{{ config(materialized='table') }}
+SELECT website_url, abn, common_crawl_company_name, abr_company_name, entity_type, legal_name, trading_name, state, postcode, crawl_date FROM {{ ref('int_matched_companies') }};

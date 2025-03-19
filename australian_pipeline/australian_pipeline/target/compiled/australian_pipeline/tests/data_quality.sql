@@ -1,0 +1,1 @@
+select * from "company_data"."public"."fct_integrated_companies" where abn is null and common_crawl_company_name != 'Company Name Not Found'
